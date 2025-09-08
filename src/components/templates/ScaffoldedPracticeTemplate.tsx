@@ -6,6 +6,7 @@ import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 // THEME COLOR SYSTEM
 const getThemeColors = (theme?: string) => {
@@ -281,7 +282,9 @@ export default function ScaffoldedPracticeTemplate({ lessonData, navigationData 
               <span className="text-[#FFB800] font-medium">Learning Objective:</span>
               <span className={`ml-2 font-bold ${themeColors.headerText}`}>{lessonData.learning_objective}</span>
             </div>
-            <MidAssistant context={{ topic: 'literature' }} />
+            <ThemeProvider>
+              <MidAssistant context={{ topic: 'literature' }} />
+            </ThemeProvider>
           </div>
 
           {/* Hook Section */}

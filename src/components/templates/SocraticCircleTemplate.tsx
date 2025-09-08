@@ -6,6 +6,7 @@ import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 // THEME COLOR SYSTEM - matching other templates
 const getThemeColors = (theme?: string) => {
@@ -253,7 +254,9 @@ export default function SocraticCircleTemplate({ lessonData, navigationData }: S
               <span className="text-[#FFB800] font-medium">Learning Objective:</span>
               <span className={`ml-2 font-bold ${themeColors.cardText}`}>{lessonData.learning_objective}</span>
             </div>
-            <MidAssistant context={{ topic: 'socratic dialogue' }} />
+            <ThemeProvider>
+              <MidAssistant context={{ topic: 'socratic dialogue' }} />
+            </ThemeProvider>
           </div>
 
           {/* Introduction */}

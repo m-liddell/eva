@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Globe, Rocket, Trophy, Clock } from 'lucide-react';
 import { LessonLayout } from '../LessonLayout';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
@@ -146,7 +147,9 @@ export default function ApplicationExtensionTemplate({ lessonData, navigationDat
                 <span className="text-[#FFB800] font-medium">Learning Objective:</span>
                 <span className="ml-2 font-bold">{lessonData.learning_objective}</span>
               </div>
-              <MidAssistant context={{ topic: 'literature' }} />
+              <ThemeProvider>
+                <MidAssistant context={{ topic: 'literature' }} />
+               </ThemeProvider>
             </div>
 
             {/* Plenary Overview */}

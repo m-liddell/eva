@@ -6,6 +6,7 @@ import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 // ENHANCED THEME COLOR SYSTEM WITH CONTRAST RULES
 const getThemeColors = (theme?: string) => {
@@ -360,7 +361,9 @@ export default function ShowcaseAnalysisTemplate({ lessonData, navigationData }:
                 <span className="text-[#FFB800] font-medium">Learning Objective:</span>
                 <span className={`ml-2 font-bold ${themeColors.cardText}`}>{lessonData.learning_objective}</span>
               </div>
+            <ThemeProvider>
               <MidAssistant context={{ topic: 'peer evaluation' }} />
+            </ThemeProvider>
             </div>
 
             {/* Plenary Overview */}

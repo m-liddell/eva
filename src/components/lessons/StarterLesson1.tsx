@@ -7,6 +7,7 @@ import { MidAssistant } from '../../components/MidAssistant';
 import { MiniAssistant } from '../../components/MiniAssistant';
 import { InteractiveImageViewer } from '../../components/InteractiveImageViewer';
 import { InteractiveWritingPanel } from '../../components/InteractiveWritingPanel';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 export default function StarterLesson1() {
   const router = useRouter();
@@ -158,7 +159,9 @@ export default function StarterLesson1() {
                 <span className="text-[#FFB800] font-medium mr-2">Learning Objective:</span>
                 <span className="font-bold text-slate-700">Write an engaging dystopian story opening that builds tension through atmosphere and control</span>
               </div>
-              <MidAssistant context={{ topic: 'literature' }} />
+              <ThemeProvider>
+                <MidAssistant context={{ topic: 'literature' }} />
+              </ThemeProvider>
             </div>
 
             {/* Introduction */}

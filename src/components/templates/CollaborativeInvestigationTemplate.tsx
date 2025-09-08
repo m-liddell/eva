@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Users, Target, Clock, BookOpen, Brain, CheckCircle2 } from 'lucide-react';
 import { LessonLayout } from '../LessonLayout';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
@@ -200,7 +201,9 @@ export default function CollaborativeInvestigationTemplate({ lessonData, navigat
               <span className="text-[#FFB800] font-medium">Learning Objective:</span>
               <span className={`ml-2 font-bold ${themeColors.headerText}`}>{lessonData.learning_objective}</span>
             </div>
+          <ThemeProvider>
             <MidAssistant context={{ topic: 'collaboration' }} />
+          </ThemeProvider>
           </div>
 
           {/* Investigation Overview */}

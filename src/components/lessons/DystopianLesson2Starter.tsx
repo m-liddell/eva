@@ -7,6 +7,7 @@ import { MidAssistant } from '../../components/MidAssistant';
 import { MiniAssistant } from '../../components/MiniAssistant';
 import { StudentActivityModal } from '../../components/StudentActivityModal';
 import { getStudentActivityByLessonAndPhase } from '../../data/studentActivities';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 export default function DystopianLesson2Starter() {
   const router = useRouter();
@@ -113,7 +114,9 @@ export default function DystopianLesson2Starter() {
                 <span className="text-[#FFB800] font-medium">Learning Objective:</span>
                 <span className="ml-2 font-bold text-gray-900">{templateLessonData.learning_objective}</span>
               </div>
-              <MidAssistant context={{ topic: 'sentence construction' }} />
+              <ThemeProvider>
+                <MidAssistant context={{ topic: 'sentence construction' }} />
+              </ThemeProvider>
             </div>
 
             {/* Hook Summary */}

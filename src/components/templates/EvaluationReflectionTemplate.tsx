@@ -5,6 +5,7 @@ import { CheckCircle, Heart, Target, Clock } from 'lucide-react';
 import { LessonLayout } from '../../components/LessonLayout';
 import { NavigationArrow } from '../../components/NavigationArrow';
 import { MidAssistant } from '../../components/MidAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { MiniAssistant } from '../../components/MiniAssistant';
 
 // THEME COLOR SYSTEM
@@ -187,7 +188,9 @@ export function EvaluationReflectionTemplate({
                 <span className="text-[#FFB800] font-medium">Learning Objective:</span>
                 <span className={`ml-2 font-bold ${themeColors.headerText}`}>{lessonData.learning_objective}</span>
               </div>
+            <ThemeProvider>
               <MidAssistant context={{ topic: 'literature' }} />
+            </ThemeProvider>
             </div>
 
             {/* Plenary Overview */}

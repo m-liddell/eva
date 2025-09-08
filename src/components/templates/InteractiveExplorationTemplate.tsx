@@ -6,6 +6,7 @@ import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { Brain, BookOpen, CheckCircle2 } from 'lucide-react';
 
 // THEME COLOR SYSTEM
@@ -331,7 +332,9 @@ export function InteractiveExplorationTemplate({ lessonData, navigationData, sho
               </div>
               <span className={`ml-2 font-bold ${themeColors.headerText}`}>{editedContent.learningObjective}</span>
             </div>
+          <ThemeProvider>
             <MidAssistant context={{ topic: 'literature' }} />
+          </ThemeProvider>
           </div>
 
           {/* Hook Section with Edit Button */}

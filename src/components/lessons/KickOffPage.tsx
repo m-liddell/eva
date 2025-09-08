@@ -5,6 +5,7 @@ import { Brain, Clock, Users, Target, BookOpen, CheckCircle2, Play, Maximize2, E
 import { NavigationArrow } from '../../components/NavigationArrow';
 import { MidAssistant } from '../../components/MidAssistant';
 import { MiniAssistant } from '../../components/MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 export default function KickOffPage() {
   const router = useRouter();
@@ -104,7 +105,9 @@ export default function KickOffPage() {
                 <span className="text-[#FFB800] font-medium mr-2">Learning Objective:</span>
                 <span className="font-bold text-slate-700">Explore the themes of Dystopian fiction</span>
               </div>
-              <MidAssistant context={{ topic: 'literature' }} />
+              <ThemeProvider>
+                <MidAssistant context={{ topic: 'literature' }} />
+              </ThemeProvider>
             </div>
 
             {/* Introduction */}

@@ -8,6 +8,7 @@ import { NavigationArrow } from '../../components/NavigationArrow';
 import { MidAssistant } from '../../components/MidAssistant';
 import { MiniAssistant } from '../../components/MiniAssistant';
 import { Share2, BookOpen, Brain, CheckCircle2 } from 'lucide-react';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 export default function DystopianLesson5Plenary() {
   const router = useRouter();
@@ -103,7 +104,9 @@ export default function DystopianLesson5Plenary() {
                 <span className="text-[#FFB800] font-medium mr-2">Learning Objective:</span>
                 <span className="font-bold text-slate-700">I can share most unsettling personification example and discuss how personification makes dystopian worlds threatening</span>
               </div>
-              <MidAssistant context={{ topic: 'literary analysis' }} />
+              <ThemeProvider>
+                <MidAssistant context={{ topic: 'literary analysis' }} />
+              </ThemeProvider>
             </div>
 
             {/* Introduction */}

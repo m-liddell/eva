@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Lightbulb, ArrowRight, Clock, CheckCircle, BookOpen, Target, Users, MessageSquare, Star, Zap, Brain, CheckCircle2 } from 'lucide-react';
 import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
 
@@ -194,7 +195,9 @@ export default function ConsolidationConnectionTemplate({ lessonData, navigation
                 <span className="text-[#FFB800] font-medium mr-2">Learning Objective:</span>
                 <span className={`font-bold ${themeColors.cardText}`}>{lessonData.learning_objective}</span>
               </div>
+            <ThemeProvider>
               <MidAssistant context={{ topic: 'consolidation' }} />
+            </ThemeProvider>
             </div>
 
             {/* Introduction */}

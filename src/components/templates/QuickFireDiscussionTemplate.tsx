@@ -6,6 +6,7 @@ import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 // THEME COLOR SYSTEM
 const getThemeColors = (theme?: string) => {
@@ -288,7 +289,9 @@ export default function QuickFireDiscussionTemplate({ lessonData, navigationData
                 <p className="text-gray-600">{lessonData.learning_objective}</p>
               </div>
             </div>
+          <ThemeProvider>
             <MidAssistant context={{ topic: 'discussion' }} />
+          </ThemeProvider>
           </div>
 
           {/* Phase Progress */}

@@ -6,6 +6,7 @@ import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 interface KnowledgeRetrievalGameProps {
   lessonData: {
@@ -438,7 +439,9 @@ export default function KnowledgeRetrievalGameTemplate({ lessonData, navigationD
                 <span className="text-[#FFB800] font-medium">Learning Objective:</span>
                 <span className="ml-2 font-bold">{lessonData.learning_objective}</span>
               </div>
+            <ThemeProvider>
               <MidAssistant context={{ topic: 'literature' }} />
+            </ThemeProvider>
             </div>
 
             {/* Hook Section */}

@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Palette, Target, Clock, Save, Download, Share2, Brain, BookOpen, CheckCircle2 } from 'lucide-react';
 import { LessonLayout } from '../LessonLayout';
 import { NavigationArrow } from '../NavigationArrow';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { MidAssistant } from '../MidAssistant';
 import { MiniAssistant } from '../MiniAssistant';
 
@@ -203,7 +204,9 @@ export default function CreativeApplicationTemplate({ lessonData, navigationData
               <span className="text-[#FFB800] font-medium">Learning Objective:</span>
               <span className={`ml-2 font-bold ${themeColors.headerText}`}>{lessonData.learning_objective}</span>
             </div>
+          <ThemeProvider>
             <MidAssistant context={{ topic: 'creative application' }} />
+          </ThemeProvider>
           </div>
 
           {/* Creative Challenge Overview */}

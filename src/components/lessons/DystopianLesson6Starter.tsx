@@ -7,6 +7,8 @@ import { MidAssistant } from '../../components/MidAssistant';
 import { MiniAssistant } from '../../components/MiniAssistant';
 import { InteractiveImageViewer } from '../../components/InteractiveImageViewer';
 import { InteractiveWritingPanel } from '../../components/InteractiveWritingPanel';
+import { ThemeProvider } from '../../context/ThemeContext';
+
 
 export default function DystopianLesson6Starter() {
   const router = useRouter();
@@ -69,7 +71,9 @@ export default function DystopianLesson6Starter() {
                 <span className="text-[#FFB800] font-medium mr-2">Learning Objective:</span>
                 <span className="font-bold text-slate-700">I can analyze how similes enhance dystopian atmosphere and convey themes of oppression and decay</span>
               </div>
-              <MidAssistant context={{ topic: 'literary devices' }} />
+              <ThemeProvider>
+                <MidAssistant context={{ topic: 'literary devices' }} />
+              </ThemeProvider>
             </div>
 
             {/* Introduction */}
