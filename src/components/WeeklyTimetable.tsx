@@ -24,6 +24,7 @@ export default function WeeklyTimetable() {
   const [viewingActivity, setViewingActivity] = useState<any>(null);
   const [viewingFullActivity, setViewingFullActivity] = useState<any>(null);
   const { getWeekApprovalStatus, getLessonsByTerm } = useTimetableStore();
+  const { goBack } = useNavigation()
   
   // Check approval status for current week
   const weekApprovalStatus = getWeekApprovalStatus(currentTerm, currentWeek);
@@ -198,7 +199,7 @@ export default function WeeklyTimetable() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-4">
             <button 
-              onClick={() => navigate(-1)}
+              onClick={goBack}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             >
               <ChevronLeft className="w-5 h-5 text-gray-600" />
